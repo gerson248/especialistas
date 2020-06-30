@@ -11,18 +11,19 @@
 	</head>
 	<body>
 
-		<!--Datos generales del proyecto-->
-        <div class="card shadow m-2">
-            
+		<!-- Inicio contenido principal -->
+		<div class="container-fluid">
+
+			<!--Datos generales del proyecto-->
+			<div class="card shadow m-2"> 
             <!--Titulo-->
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Datos generales del proyecto</h6>
-            </div>
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Datos generales del proyecto</h6>
+				</div>
 
             <!--Muestra de datos-->
             <div class=" card-body">
-                <table class="table table-sm table-borderless">
-                    
+                <table class="table table-sm table-borderless">          
                     <tr>
                         <td>Cod. Proyecto</td>
                         <td>
@@ -45,7 +46,6 @@
                             --------------
                         </td>
                     </tr>
-
                     <tr>
                         <td>Fase</td>
                         <td>-----------------</td>
@@ -66,15 +66,18 @@
                     </tr>
                 </table>
             </div>
-        </div>
+				<!-- Fin de muestra de Datos -->
+
+			</div>
+			<!-- Fin de datos generales del proyecto --> 
+
     	<!--Tablas--> 
+
         <!--Tabla Personal del consorcio-->
-        <div class="card shadow m-2">
-            
-            <!--Titulo de tabla encuadrada -->
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Personal del consorcio</h6>
-            </div>
+			<div class="card shadow m-2"> 
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Personal del consorcio</h6>
+				</div>
 
             <!--Tarjeta de la tabla y sus opciones-->
             <div class="card-body">
@@ -82,28 +85,36 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
                         <div class="dataTables_length" id="dataTable_length">
-                            <label>Mostrar 
-                                <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select>entradas
-                            </label>
+									<div class="input-group input-group-sm mb-3">
+  										<div class="input-group-prepend">
+    										<span class="input-group-text" id="inputGroup-sizing-sm">Mostrar entradas</span>
+  										</div>
+										<select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control">
+											<option value="1">1</option>
+											<option value="10">10</option>
+											<option value="25">25</option>
+											<option value="50">50</option>
+										</select>
+									</div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div id="dataTable_filter" class="dataTables_filter">
-                            <label>Buscar:
-                                <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable">
-                            </label>
+									<div class="input-group input-group-sm mb-3">
+  										<div class="input-group-prepend">
+    										<span class="input-group-text" id="inputGroup-sizing-sm">Buscar</span>
+  										</div>
+  										<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable">
+									</div>
                         </div>
                     </div>
                 </div>
                 
                 <!--Muestra la tabla-->
-                <table class="table table-sm table-bordered table-striped text-center">
-                    <thead class="">
+					<div class="table-responsive">
+						<table class="table table-sm table-bordered table-hover" id="dataTable">
+							<caption>Lista de personal</caption>
+  	                  <thead class="text-center">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Cod. Per</th>
@@ -118,70 +129,72 @@
                             <th scope="col">Esp-Prov</th>
                             <th scope="col">Vig</th>
                         </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>17200056</td>
-                            <td>PRIETO MALLQUI LUIS RICARDO</td>
-                            <td>JEFE DE PROYECTO</td>
-                            <td>123456789</td>
-                            <td>luis_prieto_ricardo@hotmail.com</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>20000.00</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
+  	                  </thead>
+                    	<tbody>
+                     	<tr>
+                        	<th scope="row">1</th>
+                           <td>17200056</td>
+                           <td>Prieto Mallqui Luis Ricardo</td>
+                           <td>Integrante</td>
+                           <td>1234567</td>
+                           <td>luis_prieto_ricardo@hotmail.com</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>NO</td> <!--Aquí va una imagen de sí o no -->
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
                         </tr>
 								<tr>
-                            <th scope="row">1</th>
-                            <td>17200238</td>
-                            <td>OLÓRTEGUI VIDALES ENZO FABRICIO</td>
-									 <td>INTEGRANTE</td>
-                            <td>12345139</td>
-                            <td>enzo.olortegui@hotmail.com</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>50000.00</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
+                           <th scope="row">2</th>
+                           <td>17200238</td>
+                           <td>Olórtegui Vidales Enzo Fabricio</td>
+									<td>Jefe de proyecto</td>
+                           <td>12345139</td>
+                           <td>enzo_olortegui@hotmail.com</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>SÍ</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>20000.00</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
+                           <th scope="row">3</th>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
                         </tr>
                         <tr>
-                            <th scope="row">3</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>20000.00</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
+                           <th scope="row">4</th>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
                         </tr>
                     </tbody>
-                </table>
+                	</table>
+					</div>
+					<!--Fin de Tabla-->
             </div>
         </div>
 		  <!--Final tabla Personal del consorcio-->
+
         <!--Tabla Especialistas del cliente-->
         <div class="card shadow m-2">
             <!--Titulo de tabla encuadrada -->
@@ -194,76 +207,85 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
                         <div class="dataTables_length" id="dataTable_length">
-                            <label>Mostrar 
-                                <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select>entradas</select>
-                            </label>
+									<div class="input-group input-group-sm mb-3">
+  										<div class="input-group-prepend">
+    										<span class="input-group-text" id="inputGroup-sizing-sm">Mostrar entradas</span>
+  										</div>
+										<select name="dataTable_length" aria-controls="dataTableEspec" class="custom-select custom-select-sm form-control">
+											<option value="1">1</option>
+											<option value="10">10</option>
+											<option value="25">25</option>
+											<option value="50">50</option>
+										</select>
+									</div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div id="dataTable_filter" class="dataTables_filter">
-                            <label>Buscar:
-                                <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable">
-                            </label>
+									<div class="input-group input-group-sm mb-3">
+  										<div class="input-group-prepend">
+    										<span class="input-group-text" id="inputGroup-sizing-sm">Buscar</span>
+  										</div>
+  										<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTableEspec">
+									</div>
                         </div>
                     </div>
                 </div>
                 
                 <!--Muestra la tabla-->
-                <table class="table table-sm table-bordered table-striped text-center">
-                    <thead class="bg-oscuro"> 
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Cod. Per</th>
-                            <th scope="col">Apellidos y Nombres</th>
-                            <th scope="col">Cargo</th>
-                            <th scope="col">Teléfono</th>
-                            <th scope="col">Correo</th>
-                            <th scope="col">Fec. Inicio</th>
-                            <th scope="col">Fec. Fin</th>
-                            <th scope="col">Adm. Cont/Esp</th>
-                            <th scope="col">Comentario</th>
-                            <th scope="col">Vig</th>
+					<div class="table-responsive">
+	               <table class="table table-sm table-bordered table-hover" id="dataTableEspec">
+						<caption>Lista de especialistas del cliente</caption>
+  		               <thead class="bg-oscuro"> 
+      	               <tr>
+         	               <th scope="col">#</th>
+            		         <th scope="col">Cod. Per</th>
+                           <th scope="col">Apellidos y Nombres</th>
+                           <th scope="col">Cargo</th>
+                           <th scope="col">Teléfono</th>
+                           <th scope="col">Correo</th>
+                           <th scope="col">Fec. Inicio</th>
+                           <th scope="col">Fec. Fin</th>
+                           <th scope="col">Adm. Cont/Esp</th>
+                           <th scope="col">Comentario</th>
+                           <th scope="col">Vig</th>
                         </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>17200056</td>
-                            <td>PRIETO MALLQUI LUIS RICARDO</td>
-                            <td>ADMIN. CONTRATO</td>
-                            <td>123456789</td>
-                            <td>luis_prieto_ricardo@hotmail.com</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
+                  	</thead>
+                     <tbody>
+                     	<tr>
+                        	<th scope="row">1</th>
+                           <td>17200238</td>
+                           <td>Olórtegui Vidales Enzo Fabricio</td>
+                           <td>Hokage</td>
+                           <td>123456789</td>
+                           <td>enzo_olortegui@hotmail.com</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
                         </tr>
-
                         <tr>
-                            <th scope="row">2</th>
-                            <td>17200056</td>
-                            <td>PRIETO MALLQUI LUIS RICARDO</td>
-                            <td>ESP. TRÁFICO</td>
-                            <td>123456789</td>
-                            <td>luis_prieto_ricardo@hotmail.com</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                        </tr>
-                    </tbody>
-                </table>
+                           <th scope="row">2</th>
+                           <td>17200056</td>
+                           <td>Prieto Mallqui Luis Ricardo</td>
+                           <td>Jounin</td>
+                           <td>123456789</td>
+                           <td>luis_prieto_ricardo@hotmail.com</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
+                           <td>---</td>
+                     	</tr>
+                  	</tbody>
+               	</table>
+					</div>
             </div>
         </div>
 		  <!--Fin de Tabla especialistas del cliente-->
+		</div>
+		<!-- /.container-fluid-->
 		<script src="js/jquery.js"></script>
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
