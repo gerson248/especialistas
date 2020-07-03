@@ -1,0 +1,30 @@
+.scroll-hacia-arriba {
+    position: fixed; /*Mantiene fijo la posicion en la pagina*/
+    display: none; /* Elimina el elementoHtml de la pagina*/
+    
+    /*Posiciona el elemento si esta fijado en la pagina*/
+    right: 1rem; /*1 rem = 16px*/
+    bottom: 1rem;
+    
+    /*Ancho y altura del elemento*/
+    width: 46px;
+    height: 46px;
+
+    text-align: center;
+    color: white;
+    background: rgba(90, 92, 105, 0.5);
+    line-height: 46px; /*Separacion entre lineas de un bloque*/
+}
+
+.scroll-hacia-arriba:hover{
+    background: #5a5c69;
+}
+
+.btn-agregar{
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    color: white;
+    background: rgba(90, 92, 105, 0.5);
+    line-height: 46px; /*Separacion entre lineas de un bloque*/
+}
