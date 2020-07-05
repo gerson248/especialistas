@@ -2,21 +2,24 @@
 <html lang="en">
 <html>
 	<head>
+        <title>Index</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
-		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 		<link rel="stylesheet" href="css/bootstrap-grid.min.css" type="text/css">
         <link rel="stylesheet" href="css/bootstrap-reboot.min.css" type="text/css">
+        <!--Iconos-->
         <script src="https://kit.fontawesome.com/01f86331e9.js" crossorigin="anonymous"></script>
+        <!--Css Propio-->
         <link rel="stylesheet" href="css/estilos.css">
-		<title>Index</title>
+        <!--DataTables-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
 	</head>
 	<body>
-
-		<!-- Inicio contenido principal -->
-		<div class="container-fluid"></div>
-
-			<!--Datos generales del proyecto-->
+        <main class="container-fluid">
+            <!--Datos generales del proyecto-->
 			<div class="card shadow m-2"> 
                 <!--Titulo-->
 				<div class="card-header py-3">
@@ -67,268 +70,654 @@
                             <td>---</td>
                         </tr>
                     </table>
-                    <!-- Fin de muestra de Datos -->
-                </div>
-                <!-- Fin de datos generales del proyecto --> 
-			</div>
+                </div><!-- Fin de muestra de Datos -->
+			</div><!-- Fin de datos generales del proyecto --> 
+
+            <!--Muestra las pestañas y enlaza los nombres de las pestañas con su contenido-->
+            <ul class="nav nav-tabs" id="pestañas" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#PersonalConsorcio" role="tab" aria-controls="consorcio" aria-selected="true">Personal del consorcio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#EspecialistaCliente" role="tab" aria-controls="cliente" aria-selected="false">Especialistas del cliente</a>
+                </li>
+            </ul>
             
-    	    <!--Tablas-->   
-            <!--Tabla Personal del consorcio-->
-		    <div class="card shadow m-2"> 
-                
-                <div class="card-header py-3">
-		    		<h6 class="m-0 font-weight-bold text-primary">Personal del consorcio</h6>
-                </div>
-                  
-                <!--Tarjeta de la tabla y sus opciones-->
-                <div class="card-body">
-                    <!--Boton agregar--> 
-                    <div class="row">  
-                        <div class="col">
-                            <boton type="button" data-toggle="modal" data-target="#agregar-personal-consorcio">
-                                <i class="btn-agregar bg-success rounded fas fa-plus"></i>
-                            </boton>
+            <!--Contenido de las pestañas-->
+            <div class="tab-content" id="pestañas">
+                <!--Contenido de la pestaña Personal del consorcio-->
+                <div class="tab-pane fade show active" id="PersonalConsorcio" role="tabpanel" aria-labelledby="consorcio-tab">
+                    <!--Tarjeta Personal del consorcio-->
+                    <div id="" class="card shadow m-1">
+                        <div class="card-body">
+                            <!--Boton agregar--> 
+                            <div class="row">  
+                                <div class="col">
+                                    <boton type="button" data-toggle="modal" data-target="#agregar-personal-consorcio">
+                                        <i class="btn-agregar bg-success rounded fas fa-plus"></i>
+                                    </boton>
+                                </div>
+                            </div>
+                            <!--Muestra la tabla-->
+                            <div class="table-responsive">
+                                <table id="TablaConsorcio" class="table table-sm table-bordered table-striped font-weight-light" > <!--font-weight-light-->
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Cod. Per</th>
+                                            <th scope="col">Apellidos y Nombres</th>
+                                            <th scope="col">Cargo</th>
+                                            <th scope="col">Telef.</th>
+                                            <th scope="col">Correo</th>
+                                            <th scope="col">F. Ini</th>
+                                            <th scope="col">F. Fin</th>
+                                            <th scope="col">Jefe</th>
+                                            <th scope="col">Costo</th>
+                                            <th scope="col">E/P</th>
+                                            <th scope="col">Vig</th>
+                                        </tr>
+                                    </thead>        
+                                    <tbody class="text-center" >
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr><tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>-</td>
+                                            <td>20000</td>    
+                                            <td>Especialista</td>
+                                            <td>-</td>    
+                                        </tr>
+                                        
+                                        
+                                    </tbody>
+                                </table>
+                            </div><!--Fin de Tabla-->
                         </div>
-                    </div>  
-
-                    <div class="form-inline">
-                        <!--Opcion Mostrar n filas--> 
-                        <label class="mb-2 mr-sm-2"> Mostrar  
-                            <select name="tabla-num-filas" class="custom-select custom-select-sm form-control form-control-sm m-2">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select> entradas
-                        </label>
-                        <!--Opcion Buscar-->
-                        <label for="buscar" class="mb-2 mr-sm-2  ml-auto">Buscar:</label>
-                        <input type="search" class="form-control form-control-sm mb-2 mr-sm-2" id="buscar" >
-                    
-                    </div>
-
-                    <!--Muestra la tabla-->
-		        	<div class="row table-responsive">
-		        		<table class="table mx-3 table-sm table-bordered table-striped text-center" id="">
-		        			<caption>Lista de personal</caption>
-  	                        <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Cod. Per</th>
-                                    <th scope="col">Apellidos y Nombres</th>
-                                    <th scope="col">Cargo</th>
-                                    <th scope="col">Teléfono</th>
-                                    <th scope="col">Correo</th>
-                                    <th scope="col">Fec. Inicio</th>
-                                    <th scope="col">Fec. Fin</th>
-                                    <th scope="col">JefeProy</th>
-                                    <th scope="col">Costo</th>
-                                    <th scope="col">Esp-Prov</th>
-                                    <th scope="col">Vig</th>
-                                </tr>
-  	                        </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>17200056</td>
-                                    <td>Prieto Mallqui Luis Ricardo</td>
-                                    <td>Integrante</td>
-                                    <td>1234567</td>
-                                    <td>luis_prieto_ricardo@hotmail.com</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>NO</td> <!--Aquí va una imagen de sí o no -->
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>17200238</td>
-                                    <td>Olórtegui Vidales Enzo Fabricio</td>
-                                                <td>Jefe de proyecto</td>
-                                    <td>12345139</td>
-                                    <td>enzo_olortegui@hotmail.com</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>SÍ</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                </tr>
-                            </tbody>
-                        </table>
-		        	</div>
-		        	<!--Fin de Tabla-->
+                    </div><!--Final Tarjeta Personal del consorcio-->
                 </div>
-		    </div>
-		    <!--Final tabla Personal del consorcio-->
-
-            <!--Tabla Especialistas del cliente-->
-            <div class="card shadow m-2">
-                <!--Titulo de tabla encuadrada -->
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Especialistas del cliente</h6>
-                </div>
-                <!--Tarjeta de la tabla y opciones-->
-                <div class="card-body">
-                    <!--Boton agregar--> 
-                    <div class="row">  
-                        <div class="col">
-                            <boton type="button" data-toggle="modal" data-target="#agregar-especialistas-cliente">
-                                <i class="bg-success btn-agregar rounded fas fa-plus"></i>
-                            </boton>
+                <!--Contenido de la pestaña Especialista del cliente-->
+                <div class="tab-pane fade" id="EspecialistaCliente" role="tabpanel" aria-labelledby="cliente-tab">
+                    <!--Tarjeta Especialistas del cliente-->
+                    <div id="" class="card shadow m-1">
+                        <div class="card-body">
+                             <!--Boton agregar--> 
+                             <div class="row">  
+                                <div class="col">
+                                    <boton type="button" data-toggle="modal" data-target="#agregar-especialistas-cliente">
+                                        <i class="bg-success btn-agregar rounded fas fa-plus"></i>
+                                    </boton>
+                                </div>
+                            </div>
+                            <!--Muestra la tabla-->       
+                            <div class="table-responsive"> <!--style="font-size: 15px;" -->
+                                <table id="TablaCliente" class="table table-sm table-bordered table-striped font-weight-light" > <!--font-weight-light-->
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Cod. Per</th>
+                                            <th scope="col">Apellidos y Nombres</th>
+                                            <th scope="col">Cargo</th>
+                                            <th scope="col">Telef.</th>
+                                            <th scope="col">Correo</th>
+                                            <th scope="col">F. Ini</th>
+                                            <th scope="col">F. Fin</th>
+                                            <th scope="col">Adm. Cont/Esp</th>
+                                            <th scope="col">Comentario</th>
+                                            <th scope="col">Vig</th>
+                                        </tr>
+                                    </thead>
+        
+                                    <tbody class="text-center" >
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>17200056</td>
+                                            <td>PRIETO MALLQUI LUIS RICARDO</td>
+                                            <td>JEFE DE PROYECTO</td>
+                                            <td>123456789</td>
+                                            <td>luis_prieto@hotmail.com</td>
+                                            <td>02/10/20</td>
+                                            <td>02/11/20</td>
+                                            <td>Adm. Cont</td>
+                                            <td>-------</td>    
+                                            <td>-</td>
+                                               
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div><!--Fin de Tabla-->
                         </div>
-                    </div>
-
-                    <div class="form-inline">
-                        <!--Opcion Mostrar n filas--> 
-                        <label class="mb-2 mr-sm-2"> Mostrar  
-                            <select name="tabla-num-filas" class="custom-select custom-select-sm form-control form-control-sm m-2">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select> entradas
-                        </label>
-                        <!--Opcion Buscar-->
-                        <label for="buscar" class="mb-2 mr-sm-2  ml-auto">Buscar:</label>
-                        <input type="search" class="form-control form-control-sm mb-2 mr-sm-2" id="buscar" >
-                    
-                    </div>
-
-
-                    <!--Muestra la tabla-->
-		    		<div class="table-responsive">
-	                   <table class="table table-sm table-bordered table-hover" id="dataTableEspec">
-		    			    <caption>Lista de especialistas del cliente</caption>
-  		                    <thead class="bg-oscuro"> 
-                                <tr>
-                                <th scope="col">#</th>
-                                    <th scope="col">Cod. Per</th>
-                                <th scope="col">Apellidos y Nombres</th>
-                                <th scope="col">Cargo</th>
-                                <th scope="col">Teléfono</th>
-                                <th scope="col">Correo</th>
-                                <th scope="col">Fec. Inicio</th>
-                                <th scope="col">Fec. Fin</th>
-                                <th scope="col">Adm. Cont/Esp</th>
-                                <th scope="col">Comentario</th>
-                                <th scope="col">Vig</th>
-                                </tr>
-                      	    </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>17200238</td>
-                                    <td>Olórtegui Vidales Enzo Fabricio</td>
-                                    <td>Hokage</td>
-                                    <td>123456789</td>
-                                    <td>enzo_olortegui@hotmail.com</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>17200056</td>
-                                    <td>Prieto Mallqui Luis Ricardo</td>
-                                    <td>Jounin</td>
-                                    <td>123456789</td>
-                                    <td>luis_prieto_ricardo@hotmail.com</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                </tr>
-                      	    </tbody>
-                   	    </table>
-		    		</div>
+                    </div><!--Final Tarjeta Especialistas del cliente-->
                 </div>
             </div>
-		    <!--Fin de Tabla especialistas del cliente-->
-	    </div>
-		<!-- /.container-fluid-->
+        </main>
         
-        <!--Popup Registrar Personal de consorcio-->
-        <div class="modal fade" id="agregar-personal-consorcio" tabindex="-1"> <!--tabindex: el valor afecta en el focus con la tecla tab, si es negtivo no lo focusea-->
+        
+        <!--Popup Registrar Especialistas del Cliente-->
+        <div class="modal fade" id="agregar-especialistas-cliente" tabindex="-1" > <!--tabindex: el valor afecta en el focus con la tecla tab, si es negtivo no lo focusea-->
             <div class="modal-dialog modal-dialog-centered">  
                 <div class="modal-content">
                     <div class="modal-header justify-content-center">
-                        <h5 class="modal-title">Registrar Personal del Consorcio</h5>
+                        <h5 class="modal-title">Ingresar Especialistas del Cliente</h5>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <!--Forma Ingresar personal del consorcio-->
+                        <form id="forma-especialistas-cliente">
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                  <label for="codigo">Código</label>
+                                  <input type="text" class="form-control" id="codigo">
+                                </div>
+                                <div class="form-group col-md-9">
+                                  <label for="nombre">Apellidos y Nombres</label>
+                                  <input type="text" class="form-control" id="nombre">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="telefono">Teléfono</label>
+                                    <input type="text" class="form-control" id="telefono">
+                                </div>
+                                <div class="form-group col-md-9">
+                                    <label for="correo">Correo</label>
+                                    <input type="email" class="form-control" id="correo">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-7">
+                                    <label for="cargo">Cargo</label>
+                                    <input type="text" class="form-control" id="cargo">
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="fecha-ini">Fecha Inicio</label>
+                                    <input type="date" class="form-control" id="fecha-ini">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-7">
+                                    <label for="esp-prov">Adm. Cont / Esp</label>
+                                    <select class="custom-select" id="esp-prov">
+                                        <option selected disabled value="">Elija...</option>
+                                        <option>Admistrador contratado</option>
+                                        <option>Especialista</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="fecha-fin">Fecha Fin</label>
+                                    <input type="date" class="form-control" id="fecha-fin">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="comentario">Comentario</label>
+                                    <input type="text" class="form-control" id="comentario">
+                                </div>
+                            </div>
                             
-                        </form>
+                            <div class="form-group">
+                                <div class="form-check">
+                                  <input checked class="form-check-input" type="checkbox" value="" id="vigente">
+                                  <label class="form-check-label" for="vigente">
+                                    Vigente
+                                  </label>
+                                </div>
+                            </div>
+                        </form> 
                     </div>
-                    <div class="modal-footer">
+                    
+                    <div class="modal-footer justify-content-around">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Guardar</button>
+                        <button type="submit" class="btn btn-primary" form="forma-personal-consorcio">Guardar</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--Popup Registrar Especialistas del cliente-->
-        <div class="modal fade" id="agregar-especialistas-cliente" tabindex="-1"> <!--tabindex: el valor afecta en el focus con la tecla tab, si es negtivo no lo focusea-->
+        <!--Popup Registrar Personal del Consorcio-->
+        <div class="modal fade" id="agregar-personal-consorcio" tabindex="-1" > <!--tabindex: el valor afecta en el focus con la tecla tab, si es negtivo no lo focusea-->
             <div class="modal-dialog modal-dialog-centered">  
                 <div class="modal-content">
                     <div class="modal-header justify-content-center">
-                        <h5 class="modal-title">Registrar Especialistas del Cliente</h5>
+                        <h5 class="modal-title" id="tituloVentana">Ingresar Personal del Consorcio</h5>
                     </div>
                     <div class="modal-body">
-                        <form>
-                            
-                        </form>
+                        <!--Forma Ingresar personal del consorcio-->
+                        <form id="forma-personal-consorcio">
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                  <label for="codigo">Código</label>
+                                  <input type="text" class="form-control" id="codigo">
+                                </div>
+                                <div class="form-group col-md-9">
+                                  <label for="nombre">Apellidos y Nombres</label>
+                                  <input type="text" class="form-control" id="nombre">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="telefono">Teléfono</label>
+                                    <input type="text" class="form-control" id="telefono">
+                                </div>
+                                <div class="form-group col-md-9">
+                                    <label for="correo">Correo</label>
+                                    <input type="email" class="form-control" id="correo">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-7">
+                                    <label for="cargo">Cargo</label>
+                                    <input type="text" class="form-control" id="cargo">
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="fecha-ini">Fecha Inicio</label>
+                                    <input type="date" class="form-control" id="fecha-ini">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                
+                                <div class="form-group col-md-3">
+                                    <label for="costo">Costo</label>
+                                    <input type="text" class="form-control" id="costo">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="esp-prov">Esp - Prov</label>
+                                    <select class="custom-select" id="esp-prov">
+                                        <option selected disabled value="">Elija...</option>
+                                        <option>Especialista</option>
+                                        <option>Proveedor</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="fecha-fin">Fecha Fin</label>
+                                    <input type="date" class="form-control" id="fecha-fin">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                  <input checked class="form-check-input" type="checkbox" value="" id="vigente">
+                                  <label class="form-check-label" for="vigente">
+                                    Vigente
+                                  </label>
+                                </div>
+                            </div>
+                        </form> 
                     </div>
-                    <div class="modal-footer justify-content-center">
+                    <div class="modal-footer justify-content-around">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Guardar</button>
+                        <button type="submit" class="btn btn-primary" form="forma-personal-consorcio">Guardar</button>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
-        
 
-        <!--Boton scroll hacia arriba-->
         <i id="scroll-hacia-arriba" class="scroll-hacia-arriba fas fa-angle-up rounded" ></i>
 
 
+        
+        
         <script src="js/jquery.js"></script>
 		<script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
         <script src="js/script.js"></script>
-	</body>
+    </body>
 </html>
