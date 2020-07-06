@@ -1,6 +1,6 @@
 .scroll-hacia-arriba {
     position: fixed; /*Mantiene fijo la posicion en la pagina*/
-    display: none; /* Elimina el elementoHtml de la pagina*/
+    display: none; /* Elimina el elementoHtml de la pagina
     
     /*Posiciona el elemento si esta fijado en la pagina*/
     right: 1rem; /*1 rem = 16px*/
@@ -28,3 +28,15 @@
     background: rgba(90, 92, 105, 0.5);
     line-height: 46px; /*Separacion entre lineas de un bloque*/
 }
+
+
+/*Cambios de colores para las pestañas de bootstrap*/
+.nav-tabs .nav-link.active{
+    color: #007bff !important;
+    background-color: #f8f9fa !important;
+}
+
+.nav-link{
+    color: black !important;
+}
+
