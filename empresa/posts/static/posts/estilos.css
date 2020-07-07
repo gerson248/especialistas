@@ -40,3 +40,14 @@
     color: black !important;
 }
 
+.celdaBordes{
+    /*padding: 5px;*/
+    border:black 1px solid;
+    border-radius: 6px;
+    
+}
+table.TablaDatosConsorcio{
+    border-collapse: separate;
+    border-spacing: 3px;
+    
+}

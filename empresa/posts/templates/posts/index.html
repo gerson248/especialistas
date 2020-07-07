@@ -28,48 +28,50 @@
 
                 <!--Muestra de datos-->
                 <div class=" card-body">
-                    <table class="table table-sm table-borderless">          
-                        <tr>
-                            <td>Cod. Proyecto</td>
-                            <td>
-                                ---------------
-                            </td>
-                            <td>Cod. SNIP</td>
-                            <td>
-                                ---------------
-                            </td>
-                            <td>Fec. Reg</td>
-                            <td>
-                                ----------------
-                            </td>
-                            <td>Fec. Estado</td>
-                            <td>
-                                ----------------
-                            </td>
-                            <td>Activo</td>
-                            <td>
-                                --------------
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Fase</td>
-                            <td>-----------------</td>
-                            <td>Nivel</td>
-                            <td>-----------------</td>
-                            <td>Función</td>
-                            <td>-----------------</td>
-                            <td>Taxonomía</td>
-                            <td>-----------------</td>
-                            <td>Situación</td>
-                            <td>-------------</td>
-                        </tr>
-                        <tr>
-                            <td>Denominación</td>
-                            <td colspan="7"></td>
-                            <td>Den. Corta</td>
-                            <td>---</td>
-                        </tr>
-                    </table>
+                    <div class="table-responsive">
+                        <table id="TablaDatosConsorcio" class=" TablaDatosConsorcio ">          <!--table table-sm -->
+                            <tr>
+                                <td class="font-weight-bold">Cod. Proyecto</td>
+                                <td>
+                                    <input type="search" class="form-control form-control-sm" id="CodigoProyecto">
+                                </td>
+                                <td class="font-weight-bold text-right" width="120px">Cod. SNIP</td>
+                                <td class ="celdaBordes" width="100px">
+                                    123456
+                                </td>
+                                <td class="font-weight-bold text-right" width="120px">Fec. Reg</td>
+                                <td class ="celdaBordes" width="100px">
+                                    05/04/20
+                                </td>
+                                <td class="font-weight-bold text-right" width="120px">Fec. Estado</td>
+                                <td class ="celdaBordes" width="100px">
+                                    05/04/20 
+                                </td>
+                                <td colspan="2" class="font-weight-bold text-right">Activo <input type="checkbox" id="checkActivo" checked disabled/>
+                                </td>
+                                
+                                
+                            </tr>
+                            <tr>
+                                <td class="font-weight-bold text-right" >Fase</td>
+                                <td class ="celdaBordes" height="33px" width="100px">Preinversion</td>
+                                <td class="font-weight-bold text-right">Nivel</td>
+                                <td class ="celdaBordes">Perfil</td>
+                                <td class="font-weight-bold text-right">Función</td>
+                                <td class ="celdaBordes">Transporte</td>
+                                <td class="font-weight-bold text-right">Taxonomía</td>
+                                <td class ="celdaBordes">Carretera</td>
+                                <td class=" font-weight-bold text-right">Situación</td>
+                                <td class ="celdaBordes">Segundo informe en revisión</td>
+                            </tr>
+                            <tr>
+                                <td class="font-weight-bold">Denominación</td>
+                                <td colspan="7" class ="celdaBordes">MEJORAMIENTO DEL SERVICIO DE TRANSITABILIDAD EN EL TRAMO EMP PE.5N - MILANO - PTO ALTO ASPUZANA - LA LOMA - EMP HU 518,DISTRITO DE PUCAYACU, PROVINCIA DE LEONCIO PRADO - HUANUCO</td>
+                                <td class="font-weight-bold text-right" width="90px">Den. Corta</td>
+                                <td colspan="2" class ="celdaBordes">MEJORAMIENTO DE TRANSITABILIDAD EN EL TRAMO EMP PE.5N - EMP HU 518. PUCAYACU -LEONCIO PRADO - HUANUCO</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div><!-- Fin de muestra de Datos -->
 			</div><!-- Fin de datos generales del proyecto --> 
 
@@ -111,7 +113,7 @@
                                                     <th scope="col">F. Ini</th>
                                                     <th scope="col">F. Fin</th>
                                                     <th scope="col">Jefe</th>
-                                                    <th scope="col">Costo</th>
+                                                    <th scope="col">Costo (S/)</th>
                                                     <th scope="col">Esp/Prov</th>
                                                     <th scope="col">Vig</th>
                                                 </tr>
