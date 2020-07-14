@@ -21,17 +21,20 @@
     background: #5a5c69;
 }
 
+
 /*Cambio de colores cuando das cick en las pestañas de bootstrap*/
+/*
 .nav-tabs .nav-link.active{
     color: #007bff !important;
     background-color: #f8f9fa !important;
-}
+}*/
 
 /*Cambio de color en las pestañas de bootstrap*/
+/*
 .nav-link{
     color: black !important;
 }
-
+*/
 /*Establece lo maximo q puede crecer una celda y pone tres puntos suspensivos si se pasa*/
 td{
     max-width: 210px;

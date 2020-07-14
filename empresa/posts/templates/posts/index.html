@@ -21,12 +21,9 @@
         <main class="container-fluid">
             <!-- Datos generales del proyecto -->
 			<div class="card shadow mt-3 mb-2">
-                <!-- Titulo -->
-				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-primary">Datos generales del proyecto</h6>
-				</div>
                 <!-- Muestra de datos -->  
                 <div class=" card-body">
+                    <h5 class="card-title mb-4 font-weight-bold">Datos generales del proyecto</h5>
                     <div class="table-responsive">
                         <table id="TablaDatosConsorcio" class="table table-sm table-bordered table-striped"> <!--class="table table-sm table-bordered table-striped"-->
                             <thead>
@@ -71,9 +68,9 @@
             
             <!-- Tarjeta de las pestañas -->
             <div class="card shadow mb-3">
-                <div class="card-body">
+                <div class="card-header">
                     <!-- Inicialiazacion de pestañas -->
-                    <ul class="nav nav-tabs" role="tablist">
+                    <ul class="nav nav-tabs card-header-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold active" id="home-tab" data-toggle="tab" href="#PersonalConsorcio" role="tab" aria-controls="consorcio" aria-selected="true">Personal del consorcio</a>
                         </li>
@@ -81,8 +78,10 @@
                             <a class="nav-link font-weight-bold" id="profile-tab" data-toggle="tab" href="#EspecialistaCliente" role="tab" aria-controls="cliente" aria-selected="false">Especialistas del cliente</a>
                         </li>
                     </ul>
+                </div>
+                <div class="card-body">
                     <!-- Contenido de las pestañas -->
-                    <div class="tab-content pt-3">
+                    <div class="tab-content">
                         <!-- Pestaña Personal del Consorcio -->
                         <div class="tab-pane fade show active" id="PersonalConsorcio" role="tabpanel" aria-labelledby="consorcio-tab"> 
                             <!-- Muestra la tabla Personal del Consorcio -->
