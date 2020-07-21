@@ -20,12 +20,12 @@
 	<body>
         <main class="container-fluid">
             <!-- Datos generales del proyecto -->
-			<div class="card shadow mt-3 mb-2">
+            <div class="card mt-3 mb-3 bg-light">
                 <!-- Muestra de datos -->  
-                <div class=" card-body">
-                    <h5 class="card-title mb-4 font-weight-bold">Datos generales del proyecto</h5>
+                <div class=" card-body ">        
+                    <h5 class="card-title mb-4 font-weight-bold">Proyectos</h5>
                     <div class="table-responsive">
-                        <table id="TablaDatosConsorcio" class="table table-sm table-bordered table-striped"> <!--class="table table-sm table-bordered table-striped"-->
+                        <table id="TablaDatosConsorcio" class="table table-sm table-bordered table-striped table-hover"> <!--class="table table-sm table-bordered table-striped"-->
                             <thead>
                                 <tr>
                                     <th>Cod.</th>
@@ -71,10 +71,10 @@
                 <div class="card-header">
                     <!-- Inicialiazacion de pestañas -->
                     <ul class="nav nav-tabs card-header-tabs" role="tablist">
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link font-weight-bold active" id="home-tab" data-toggle="tab" href="#PersonalConsorcio" role="tab" aria-controls="consorcio" aria-selected="true">Personal del consorcio</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link font-weight-bold" id="profile-tab" data-toggle="tab" href="#EspecialistaCliente" role="tab" aria-controls="cliente" aria-selected="false">Especialistas del cliente</a>
                         </li>
                     </ul>
@@ -883,7 +883,7 @@
                                                     <td>2019-02-12</td>
                                                     <td>2020-01-01</td>
                                                     <td>Especialista</td>
-                                                    <td>adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras</td>
+                                                    <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque reiciendis exercitationem at voluptates vitae porro?</td>
                                                     <td><input type="checkbox" disabled></td>
                                                 </tr>
                                                 <tr>
@@ -896,7 +896,7 @@
                                                     <td>2015-02-17</td>
                                                     <td>2018-03-19</td>
                                                     <td>Especialista</td>
-                                                    <td>elit. Aliquam auctor, velit eget laoreet posuere, enim</td>
+                                                    <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla iure mollitia sapiente dignissimos voluptas, modi provident fugiat nostrum consequuntur doloribus.</td>
                                                     <td><input type="checkbox" disabled></td>
                                                 </tr>
                                                 <tr>
@@ -1518,8 +1518,91 @@
                 </div>
             </div><!-- Fin de tarjeta de las pestañas -->
         </main>
-        
-        
+
+        <!-- Popup Registrar Personal del Consorcio -->
+        <div class="modal fade" id="agregar-personal-consorcio" tabindex="-1" > <!--tabindex: el valor afecta en el focus con la tecla tab, si es negtivo no lo focusea-->
+            <div class="modal-dialog modal-dialog-centered">  
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <h5 class="modal-title" id="tituloModalConsor">Nuevo Personal del Consorcio</h5>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Forma Ingresar personal del consorcio -->
+                        <form id="forma-personal-consorcio">
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                  <label for="codigo">Código</label>
+                                  <input type="text" class="form-control" id="codigoPer">
+                                </div>
+                                <div class="form-group col-md-9">
+                                  <label for="nombre">Apellidos y Nombres</label>
+                                  <input type="text" class="form-control" id="nombrePer">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="telefono">Teléfono</label>
+                                    <input type="text" class="form-control" id="telefonoPer">
+                                </div>
+                                <div class="form-group col-md-9">
+                                    <label for="correo">Correo</label>
+                                    <input type="email" class="form-control" id="correoPer">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-7">
+                                    <label for="cargo">Cargo</label>
+                                    <input type="text" class="form-control" id="cargoPer">
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="fecha-ini">Fecha Inicio</label>
+                                    <input type="date" class="form-control" id="fecha-iniPer" > <!--value="2017-02-04"-->
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="costo">Costo</label>
+                                    <input type="text" class="form-control" id="costoPer">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="esp-prov">Esp - Prov</label>
+                                    <select class="custom-select" id="esp-provPer">
+                                        <option selected disabled value="">Elija...</option>
+                                        <option value="Especialista">Especialista </option>
+                                        <option value="Proveedor">Proveedor</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="fecha-fin">Fecha Fin</label>
+                                    <input type="date" class="form-control" id="fecha-finPer" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="jefeProy">
+                                  <label class="form-check-label" for="JefeProy">
+                                    Jefe de Proyecto
+                                  </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                  <input checked class="form-check-input" type="checkbox" value="" id="vigentePer">
+                                  <label class="form-check-label" for="vigentePer">
+                                    Vigente
+                                  </label>
+                                </div>
+                            </div>
+                        </form> 
+                    </div>
+                    <div class="modal-footer justify-content-around">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" form="forma-personal-consorcio">Guardar</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
         <!-- Popup Registrar Especialistas del Cliente -->
         <div class="modal fade" id="agregar-especialistas-cliente" tabindex="-1" > <!--tabindex: el valor afecta en el focus con la tecla tab, si es negtivo no lo focusea-->
             <div class="modal-dialog modal-dialog-centered tamaño">  
@@ -1584,7 +1667,7 @@
                             
                             <div class="form-group">
                                 <div class="form-check">
-                                  <input checked class="form-check-input" type="checkbox" value="si" id="vigenteClie">
+                                  <input class="form-check-input" type="checkbox" value="si" id="vigenteClie">
                                   <label class="form-check-label" for="vigenteClie">
                                     Vigente
                                   </label>
@@ -1601,89 +1684,146 @@
             </div>
         </div>
 
-        <!-- Popup Registrar Personal del Consorcio -->
-        <div class="modal fade" id="agregar-personal-consorcio" tabindex="-1" > <!--tabindex: el valor afecta en el focus con la tecla tab, si es negtivo no lo focusea-->
-            <div class="modal-dialog modal-dialog-centered">  
+        <!--- Popup Ver Personal del Consorcio -->
+        <div class="modal fade" id="ver-personal-consorcio">
+            <div class="modal-dialog modal-dialog-centered tamaño">  
                 <div class="modal-content">
                     <div class="modal-header justify-content-center">
-                        <h5 class="modal-title" id="tituloModalConsor">Nuevo Personal del Consorcio</h5>
+                        <h5 class="modal-title">Detalles Personal del Consorcio</h5>
                     </div>
                     <div class="modal-body">
-                        <!-- Forma Ingresar personal del consorcio -->
-                        <form id="forma-personal-consorcio">
-                            <div class="form-row">
-                                <div class="form-group col-md-3">
-                                  <label for="codigo">Código</label>
-                                  <input type="text" class="form-control" id="codigoPer">
-                                </div>
-                                <div class="form-group col-md-9">
-                                  <label for="nombre">Apellidos y Nombres</label>
-                                  <input type="text" class="form-control" id="nombrePer">
-                                </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                              <label>Código</label>
+                              <p id="codigoPer-ver"></p>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-3">
-                                    <label for="telefono">Teléfono</label>
-                                    <input type="text" class="form-control" id="telefonoPer">
-                                </div>
-                                <div class="form-group col-md-9">
-                                    <label for="correo">Correo</label>
-                                    <input type="email" class="form-control" id="correoPer">
-                                </div>
+                            <div class="col-md-9">
+                              <label>Apellidos y Nombres</label>
+                              <p id="nombrePer-ver"></p>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-7">
-                                    <label for="cargo">Cargo</label>
-                                    <input type="text" class="form-control" id="cargoPer">
-                                </div>
-                                <div class="form-group col-md-5">
-                                    <label for="fecha-ini">Fecha Inicio</label>
-                                    <input type="date" class="form-control" id="fecha-iniPer">
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Teléfono</label>
+                                <p id="telefonoPer-ver"></p>
                             </div>
-                            <div class="form-row">
-                                
-                                <div class="form-group col-md-3">
-                                    <label for="costo">Costo</label>
-                                    <input type="text" class="form-control" id="costoPer">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="esp-prov">Esp - Prov</label>
-                                    <select class="custom-select" id="esp-provPer">
-                                        <option selected disabled value="">Elija...</option>
-                                        <option value="Especialista">Especialista </option>
-                                        <option value="Proveedor">Proveedor</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-5">
-                                    <label for="fecha-fin">Fecha Fin</label>
-                                    <input type="date" class="form-control" id="fecha-finPer" >
-                                </div>
+                            <div class="col-md-9">
+                                <label>Correo</label>
+                                <p id="correoPer-ver"></p>
                             </div>
-                            <div class="form-group">
-                                <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" value="" id="jefeProy">
-                                  <label class="form-check-label" for="JefeProy">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <label>Cargo</label>
+                                <p id="cargoPer-ver"></p>
+                            </div>
+                            <div class="col-md-5">
+                                <label>Fecha Inicio</label>
+                                <p id="fecha-iniPer-ver"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Costo</label>
+                                <p id="costoPer-ver"></p>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Esp - Prov</label>
+                                <p id="esp-provPer-ver"></p>
+                            </div>
+                            <div class="col-md-5">
+                                <label>Fecha Fin</label>
+                                <p id="fecha-finPer-ver"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="jefeProy-ver" disabled>
+                                <label class="form-check-label">
                                     Jefe de Proyecto
-                                  </label>
-                                </div>
+                                </label>
                             </div>
-                            <div class="form-group">
-                                <div class="form-check">
-                                  <input checked class="form-check-input" type="checkbox" value="" id="vigentePer">
-                                  <label class="form-check-label" for="vigentePer">
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input checked class="form-check-input" type="checkbox" value="" id="vigentePer-ver" disabled>
+                                <label class="form-check-label" for="vigentePer">
                                     Vigente
-                                  </label>
-                                </div>
+                                </label>
                             </div>
-                        </form> 
-                    </div>
-                    <div class="modal-footer justify-content-around">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary" form="forma-personal-consorcio">Guardar</button>
+                        </div>
                     </div>
                 </div>
-            </div> 
+            </div>
+        </div>
+
+        <!-- Popup Ver detalles Especialistas del Cliente -->
+        <div class="modal fade" id="ver-especialistas-cliente">
+            <div class="modal-dialog modal-dialog-centered tamaño">  
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <h5 class="modal-title" id="tituloModalCliente">Detalles Especialistas del Cliente</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Código</label>
+                                <p id="codigoClie-ver"></p>
+                            </div>
+                            <div class="col-md-9">
+                                <label>Apellidos y Nombres</label>
+                                <p id="nombreClie-ver"></p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Teléfono</label>
+                                <p id="telefonoClie-ver"></p>
+                            </div>
+                            <div class="col-md-9">
+                                <label>Correo</label>
+                                <p id="correoClie-ver"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <label>Cargo</label>
+                                <p id="cargoClie-ver"></p>
+                            </div>
+                            <div class="col-md-5">
+                                <label>Fecha Inicio</label>
+                                <p id="fecha-ini_Clie-ver"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <label>Adm. Cont / Esp</label>
+                                <p id="adm-prov_Clie-ver"></p>
+                            </div>
+                            <div class="col-md-5">
+                                <label>Fecha Fin</label>
+                                <p id="fecha-fin_Clie-ver"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Comentario</label>
+                                <p id="comentarioClie-ver"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="si" id="vigenteClie-ver" disabled>
+                              <label class="form-check-label">
+                                Vigente
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Boton desplazamiento hacai arriba -->
@@ -1691,14 +1831,16 @@
 
         <!-- Menu Contextual Tabla Personal del Consorcio -->
         <div id="menuContextualConsorcio" class="dropdown-menu">
-            <boton id="botonAgregarConsorcio" class ="dropdown-item" type="button" data-toggle="modal" data-target="#agregar-personal-consorcio">Registrar</boton>
+            <boton id="botonVerConsor" class ="dropdown-item" type="button" data-toggle="modal" data-target="#ver-personal-consorcio">Ver</boton>
+            <boton id="botonAgregarConsorcio" class ="dropdown-item" type="button" data-toggle="modal" data-target="#agregar-personal-consorcio">Nuevo</boton>
             <boton id="botonModificarConsorcio" class ="dropdown-item" type="button" data-toggle="modal" data-target="#agregar-personal-consorcio">Editar</boton>
             <boton id ="botonEliminarConsorcio" class="dropdown-item" type="button">Eliminar</boton>
         </div>
 
         <!-- Menu Contextual Tabla Especialistas del Cliente -->
         <div id="menuContextualCliente" class="dropdown-menu">
-            <boton id="botonAgregarCliente" class ="dropdown-item" type="button" data-toggle="modal" data-target="#agregar-especialistas-cliente">Registrar</boton>
+            <boton id="botonVerCliente" class ="dropdown-item" type="button" data-toggle="modal" data-target="#ver-especialistas-cliente">Ver</boton>
+            <boton id="botonAgregarCliente" class ="dropdown-item" type="button" data-toggle="modal" data-target="#agregar-especialistas-cliente">Nuevo</boton>
             <boton id="botonModificarCliente" class ="dropdown-item" type="button" data-toggle="modal" data-target="#agregar-especialistas-cliente">Editar</boton>
             <boton id="botonEliminarCliente" class="dropdown-item" type="button">Eliminar</boton>
         </div>

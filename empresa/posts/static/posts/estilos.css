@@ -21,16 +21,13 @@
     background: #5a5c69;
 }
 
-
-/*Cambio de colores cuando das cick en las pestañas de bootstrap*/
-/*
+/*Cambio de colores cuando das cick en las pestañas de bootstrap
 .nav-tabs .nav-link.active{
     color: #007bff !important;
     background-color: #f8f9fa !important;
 }*/
 
-/*Cambio de color en las pestañas de bootstrap*/
-/*
+/*Cambio de color en las pestañas de bootstrap
 .nav-link{
     color: black !important;
 }
@@ -53,4 +50,17 @@ th{
 /*Reduce el tamaño de la ventana modal del formulario "Especialistas del cliente"*/
 .tamaño{
     max-height: 600px;
+}
+.card-body{
+    padding-bottom: 8px !important ;
+}
+
+#ver-personal-consorcio label{
+    font-weight: bold;
+    color: black !important;
+}
+
+#ver-especialistas-cliente label{
+    font-weight: bold;
+    color: black !important;
 }

@@ -22,7 +22,7 @@ var TablaCliente = function (){
     //Aplicando la herramienta DataTables a la tabla Especialistas del cliente
     $('#TablaCliente').DataTable({ 
         "language":lenguaje_español,
-        "columnDefs":[{"orderable" :false, "targets": [4,5,8,9,10]},], //Elimina las flechas de ordenar en las columnas en los [].
+        "columnDefs":[{"orderable" :false, "targets": [4,5,8,9,10]}], //Elimina las flechas de ordenar en las columnas en los [].
         "lengthMenu": [3,5,10,15], //Establece los valores del select del numero de filas que se quiere mostrar
         "info": false, //Elimina la informacion de paginas mostradas de la parte inferior de la tabla.
     });
@@ -32,7 +32,7 @@ var TablaDatosConsorcio = function (){
     //Aplicando la herramienta DataTables a la tabla Especialistas del cliente
     $('#TablaDatosConsorcio').DataTable({ 
         "language":lenguaje_español,
-        "columnDefs":[{"orderable" :false,"targets": [1]}],
+        //"columnDefs":[{"orderable" :false,"targets": [1]}],
         "lengthMenu": [3,5,10,15],
         "info": false
     });
@@ -86,6 +86,26 @@ $("#scroll-hacia-arriba").click(function(){
     return false;
 });
 
+/*
+$("td").click(function(){
+    $("td").css({
+        "overflow":'scroll',
+        "white-space": 'nowrap',
+        "text-overflow": 'clip'
+    });
+});
+*/
+
+// "mousedown" Evento que reconoce cualquier click del mouse, hace aparecer el menu contextual donde das click derecho (NO SE ESTA USANDO)
+/*$("table").mousedown(function (e) {
+    if (e.button == 2){
+        $("#menuContextual").css("top",e.pageY+1);
+        $("#menuContextual").css("left",e.pageX+1);
+        $("#menuContextual").show("fast");
+    }
+})
+*/
+
 // Genera el evento con click derecho donde esta el "tbody(id="espacioMCConsorcio")"
 $("#espacioMCConsorcio").on("contextmenu",function(e){
     e.preventDefault(); // Descativa cualquier menu contextual activado, considerando el de windows
@@ -95,6 +115,35 @@ $("#espacioMCConsorcio").on("contextmenu",function(e){
     $("#menuContextualConsorcio").css("left",e.pageX);
     $("#menuContextualConsorcio").show("fast");
     
+    $("#botonVerConsor").on("click",function (){
+        dato = e.target; // Captura el elemento donde se realizo el evento
+        fila = $(dato).closest("tr"); // Sube a la etiqueta padre "tr"
+        // Baja a los elemento de etiqueta "td" dependiendo de sus indices
+        codigo = parseInt(fila.find("td").eq(1).text()); 
+        nombre = fila.find("td").eq(2).text(); 
+        cargo = fila.find("td").eq(3).text();
+        telefono = fila.find("td").eq(4).text();
+        correo = fila.find("td").eq(5).text();
+        fIni = fila.find("td").eq(6).text();
+        fFin = fila.find("td").eq(7).text();
+        jefe = fila.find("td").eq(8).children("input").eq(0).prop("checked");
+        costo = fila.find("td").eq(9).text();
+        esp_prov = fila.find("td").eq(10).text();
+        vigente = fila.find("td").eq(11).children("input").eq(0).prop("checked");
+        $("#codigoPer-ver").text(codigo);
+        $("#codigoPer-ver").text(codigo);
+        $("#nombrePer-ver").text(nombre);
+        $("#cargoPer-ver").text(cargo);
+        $("#telefonoPer-ver").text(telefono);
+        $("#correoPer-ver").text(correo);
+        $("#fecha-iniPer-ver").text(fIni);
+        $("#fecha-finPer-ver").text(fFin);
+        $("#jefeProy-ver").prop("checked",jefe);
+        $("#costoPer-ver").text(costo);
+        $("#esp-provPer-ver").text(esp_prov);
+        $("#vigentePer-ver").prop("checked",vigente);
+    })
+
     $("#botonAgregarConsorcio").on("click",function (){
         $("#forma-personal-consorcio").trigger("reset"); // Reinicia el formulario
         $("#tituloModalConsor").text("Nuevo Personal del Consorcio"); // Cambia de nombre al formulario
@@ -146,6 +195,32 @@ $("#espacioMCCliente").on("contextmenu",function(e){
     $("#menuContextualCliente").css("left",e.pageX);
     $("#menuContextualCliente").show("fast");
 
+    $("#botonVerCliente").on("click",function (){
+        dato = e.target; // Captura el elemento donde se realizo el evento
+        fila = $(dato).closest("tr"); // Sube a la etiqueta padre "tr"
+        // Baja a los elemento de etiqueta "td" dependiendo de sus indices
+        codigo = parseInt(fila.find("td").eq(1).text()); 
+        nombre = fila.find("td").eq(2).text(); 
+        cargo = fila.find("td").eq(3).text();
+        telefono = fila.find("td").eq(4).text();
+        correo = fila.find("td").eq(5).text();
+        fIni = fila.find("td").eq(6).text();
+        fFin = fila.find("td").eq(7).text();
+        tipo = fila.find("td").eq(8).text();
+        comentario = fila.find("td").eq(9).text();
+        vigente = fila.find("td").eq(10).children("input").eq(0).prop("checked");
+        // Ingresa los datos de la fila al formulario 
+        $("#codigoClie-ver").text(codigo);   
+        $("#nombreClie-ver").text(nombre);
+        $("#cargoClie-ver").text(cargo);
+        $("#telefonoClie-ver").text(telefono);
+        $("#correoClie-ver").text(correo);
+        $("#fecha-ini_Clie-ver").text(fIni);
+        $("#fecha-fin_Clie-ver").text(fFin);
+        $("#adm-prov_Clie-ver").text(tipo);
+        $("#comentarioClie-ver").text(comentario);
+        $("#vigenteClie-ver").prop("checked",vigente);
+    })
     $("#botonAgregarCliente").on("click",function (){
         $("#forma-especialistas-cliente").trigger("reset"); // Reinicia el formulario
         $("#tituloModalCliente").text("Nuevo Especialista del Cliente");
@@ -208,7 +283,6 @@ vigente.css({
 
 // Selecciona y centra los chekbox de la columna "Jefe" de la tabla "Personal del Consorcio" 
 jefe = $("#TablaPersoConsorcio").find("tbody").children("tr").children("td:nth-child(9)");
-console.log(jefe);
 jefe.css({
     "text-align": "center"
 })
