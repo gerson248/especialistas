@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <html>
 	<head>
         <title>Index</title>
@@ -28,39 +28,34 @@
                         <table id="TablaDatosConsorcio" class="table table-sm table-bordered table-striped table-hover"> <!--class="table table-sm table-bordered table-striped"-->
                             <thead>
                                 <tr>
-                                    <th>Cod.</th>
+                                    <th>Código</th>
                                     <th>Denominación corta</th>
-                                    <th>Cliente</th>
                                     <th>Consorcio</th>
                                     <th>Fase</th>
                                     <th>Nivel</th>
-                                    <th>Función</th>
+                                    <th>Funcion</th>
                                     <th>Taxonomía</th>
+                                    <th>Estado</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>MEJORAMIENTO DE TRANSITABILIDAD EN EL TRAMO EMP PE.5N - EMP HU 518. PUCAYACU -LEONCIO PRADO - HUANUCO</td>
-                                    <td>Consorcio  y Asociados</td>
-                                    <td>Preinversión</td>
-                                    <td>Perfil</td>
-                                    <td>Transporte</td>
-                                    <td>Carretera</td>
-                                    <td>Segundo informe observado</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>MEJORAMIENTO DE TRANSITABILIDAD EN EL TRAMO EMP PE.5N - EMP HU 518. PUCAYACU -LEONCIO PRADO - HUANUCO</td>
-                                    <td>Consorcio  y Asociados</td>
-                                    <td>Preinversión</td>
-                                    <td>Perfil</td>
-                                    <td>Transporte</td>
-                                    <td>Carretera</td>
-                                    <td>Segundo informe observado</td>
-                                </tr>
+                               {% if projects %}
+                                 {% for project in projects %}
+                                 <tr>
+                                    <td>{{ project.cod_proyecto }}</td>
+                                    <td>{{ project.denominacion_corta }}</td>
+                                    <td>{{ project.consorcio }}</td>
+                                    <td>{{ project.fase }}</td>
+                                    <td>{{ project.nivel }}</td>
+                                    <td>{{ project.funcion }}</td>
+                                    <td>{{ project.taxonomia }}</td>
+                                    <td>{{ project.estado }}</td>
+                                 </tr>
+                                 {% endfor %}
+                               {% else %}
+                                 <p>No hay proyectos disponibles</p>
+                               {% endif %}
                             </tbody>
-
                         </table>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 from django.db import models
 
 class Persona(models.Model):
+    codigo = models.CharField('Código',unique=True, max_length=8,default="")
     dni = models.CharField('DNI',unique=True, max_length=8)
     nombre = models.CharField('Nombre',max_length=100)
     apellido = models.CharField('Apellido',max_length=100)
@@ -14,12 +15,12 @@ class Persona(models.Model):
     class Meta:
         abstract = True
     def __str__(self):
-        return self.nombre + self.apellido
+        return self.nombre + " " + self.apellido
 
 
 class Proyecto(models.Model):
-    cod_proyecto = models.CharField('Código de Proyecto',max_length=20)
-    cod_snip = models.CharField('Código Snip',max_length=20,default="")
+    cod_proyecto = models.CharField('Código de Proyecto',max_length=20,unique=True)
+    cod_snip = models.CharField('Código Snip',max_length=20,default="",unique=True)
     denominacion = models.TextField('Denominación')
     denominacion_corta = models.TextField('Denominación Corta')
     nivel = models.CharField('Nivel',max_length=30)
