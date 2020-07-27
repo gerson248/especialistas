@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<html>
+	<head>
+        <title>Index</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="../../static/posts/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="../../static/posts/bootstrap-grid.min.css" type="text/css">
+        <link rel="stylesheet" href="../../static/posts/bootstrap-reboot.min.css" type="text/css">
+        <!--Css Propio-->
+        <link rel="stylesheet" href="../../static/posts/estilos.css">
+        <!--Iconos-->
+        <script src="https://kit.fontawesome.com/01f86331e9.js" crossorigin="anonymous"></script>
+        <!--DataTables-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+	</head>
+	<body>
+        <main class="container-fluid">
+            <!-- Datos generales del proyecto -->
+            <div class="card mt-3 mb-3 bg-light">
+                <!-- Muestra de datos -->  
+                <div class=" card-body">        
+                    <h3 class="card-title mb-4 font-weight-bold text-center">Proyectos</h3>
+                    <div class="table-responsive">
+                        <table id="TablaDatosConsorcio" class="table table-sm table-bordered table-striped table-hover"> <!--class="table table-sm table-bordered table-striped"-->
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Denominación corta</th>
+                                    <th>Consorcio</th>
+                                    <th>Fase</th>
+                                    <th>Nivel</th>
+                                    <th>Funcion</th>
+                                    <th>Taxonomía</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               {% if projects %}
+                                 {% for project in projects %}
+                                 <tr>
+                                    <td><a class = "text-reset" href="{% url 'posts:detail' project.id %}">{{ project.cod_proyecto }}</a></td>
+                                    <td><a class = "text-reset" href="{% url 'posts:detail' project.id %}">{{ project.denominacion_corta }}</a></td>
+                                    <td><a class = "text-reset" href="{% url 'posts:detail' project.id %}">{{ project.consorcio }}</a></td>
+                                    <td><a class = "text-reset" href="{% url 'posts:detail' project.id %}">{{ project.fase }}</a></td>
+                                    <td><a class = "text-reset" href="{% url 'posts:detail' project.id %}">{{ project.nivel }}</a></td>
+                                    <td><a class = "text-reset" href="{% url 'posts:detail' project.id %}">{{ project.funcion }}</a></td>
+                                    <td><a class = "text-reset" href="{% url 'posts:detail' project.id %}">{{ project.taxonomia }}</a></td>
+                                    <td><a class = "text-reset" href="{% url 'posts:detail' project.id %}">{{ project.estado }}</a></td>
+                                 </tr>
+                                 {% endfor %}
+                               {% else %}
+                                 <p>No hay proyectos disponibles</p>
+                               {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- Fin de tarjeta de Datos generales del proyecto -->
+            <script src="../../static/posts/jquery.js"></script>
+            <script src="../../static/posts/bootstrap.bundle.min.js"></script>
+            <script src="../../static/posts/bootstrap.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+            <script src="../../static/posts/script.js"></script>
+    </body>
+</html>

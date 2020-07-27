@@ -3,7 +3,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.views import generic
 
-#models
 from .models import Proyecto, Personal_Cliente
 from .models import Consorcio, Personal_Consorcio
 
@@ -33,7 +32,6 @@ def register_consortium(request):
             profile.consorcio_id = proyecto.consorcio
 
             profile.save()
-
             return render(request, 'posts/detail.html')
 
         elif request.POST.get('eliminar', '')=='eliminar':
@@ -61,8 +59,8 @@ def register_consortium(request):
             proyecto = Proyecto.objects.get(pk=request.POST['consorcio_id'])
             profile.consorcio_id = proyecto.consorcio
 
+
             profile.save()
-            
             return render(request, 'posts/detail.html')
 
     return render(request, 'posts/register.html')
@@ -133,5 +131,3 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Proyecto
     template_name = 'posts/detail.html'
-
-

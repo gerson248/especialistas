@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="es">
+<html>
+	<head>
+        <title>Index</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
+        <!--Bootstrap-->
+      <link rel="stylesheet" href="../../static/posts/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="../../static/posts/bootstrap-grid.min.css" type="text/css">
+      <link rel="stylesheet" href="../../static/posts/bootstrap-reboot.min.css" type="text/css">
+      <!--Css Propio-->
+      <link rel="stylesheet" href="../../static/posts/estilos.css">
+      <!--Iconos-->
+      <script src="https://kit.fontawesome.com/01f86331e9.js" crossorigin="anonymous"></script>
+      <!--DataTables-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+	</head>
+	<body>
+        <main class="container-fluid">
+            
+            <!-- Datos generales del proyecto -->
+            <div class="card mt-3 mb-3 bg-light">
+                <!-- Muestra de datos -->  
+                <div class=" card-body ">    
+                    <h2 class="text-center card-title mb-4 font-weight-bold">{{ proyecto }}</h2>
+                </div>
+            </div><!-- Fin de tarjeta de Datos generales del proyecto -->
+            
+            <div class="card shadow mb-4">
+                <div class=" card-body ">
+                   <a class="btn btn-primary" href="{% url 'posts:index' %}">Volver</a>
+                    <h3 class="text-center">{{proyecto.consorcio}}</h3>
+                    <h5 class="card-title mb-4 font-weight-bold">Personal del Consorcio</h5>
+                    <!-- Muestra la tabla Personal del Consorcio -->
+                    <div class="table-responsive mb-5">
+                        <table id="TablaPersoConsorcio" class=" table table-sm table-bordered table-hover"> <!--font-weight-light-->
+                            <thead>
+                                <tr>
+                                    <th scope="col">N°</th>
+                                    <th scope="col">Cod.</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Cargo</th>
+                                    <th scope="col">Teléfono</th>
+                                    <th scope="col">Correo</th>
+                                    <th scope="col">F. Ini.</th>
+                                    <th scope="col">F. Fin</th>
+                                    <th scope="col">Jefe</th>
+                                    <th scope="col">Costo (S/)</th>
+                                    <th scope="col">Vigente</th>
+                                </tr>
+                            </thead>        
+                            <tbody class="" id ="espacioMCConsorcio">
+                             {% for persona in proyecto.consorcio.personal_consorcio_set.all %}
+                                <tr>
+                                   <td>{{persona.id}}</td>
+                                   <td>{{persona.codigo}}</td>
+                                   <td>{{persona.nombre}}</td>
+                                   <td>{{persona.cargo}}</td>
+                                   <td>{{persona.telefono}}</td>
+                                   <td>{{persona.email}}</td>
+                                   <td>{{persona.fecha_inicio}}</td>
+                                   <td>{{persona.fecha_fin}}</td>
+                                   <td>{{persona.jefe}}</td>
+                                   <td>{{persona.costo}}</td>
+                                   <td>{{persona.vigente}}</td>
+                                </tr>
+                             {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <h5 class="card-title mb-4 mt-5 font-weight-bold">Especialistas del Cliente</h5>
+                    <!-- Muestra la tabla Especialistas del Cliente -->       
+                    <div class="table-responsive"> 
+                        <table id="TablaCliente" class="table table-sm table-bordered table-hover"> <!--font-weight-light-->
+                            <thead >
+                                <tr>
+                                    <th scope="col">N°</th>
+                                    <th scope="col">Cod.</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Cargo</th>
+                                    <th scope="col">Teléfono</th>
+                                    <th scope="col">Correo</th>
+                                    <th scope="col">F. Ini.</th>
+                                    <th scope="col">F. Fin</th>
+                                    <th scope="col">Comentario</th>
+                                    <th scope="col">Vigente</th>
+                                </tr>
+                            </thead>
+                            <tbody class="" id ="espacioMCCliente" >
+                             {% for persona in proyecto.personal_cliente_set.all %}
+                                <tr>
+                                   <td>{{persona.id}}</td>
+                                   <td>{{persona.codigo}}</td>
+                                   <td>{{persona.nombre}}</td>
+                                   <td>{{persona.cargo}}</td>
+                                   <td>{{persona.telefono}}</td>
+                                   <td>{{persona.email}}</td>
+                                   <td>{{persona.fecha_inicio}}</td>
+                                   <td>{{persona.fecha_fin}}</td>
+                                   <td>{{persona.comentario}}</td>
+                                   <td>{{persona.vigente}}</td>
+                                </tr>
+                             {% endfor %}
+                            </tbody>
+                        </table>
+                    </div><!-- Fin de Tabla Especialistas del Cliente -->
+                </div>
+            </div>
+        </main>
+
+        
+        <!--- Popup Ver Personal del Consorcio -->
+        <div class="modal fade" id="ver-personal-consorcio">
+            <div class="modal-dialog modal-dialog-centered tamaño">  
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <h5 class="modal-title">Detalles Personal del Consorcio</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                              <label>Código</label>
+                              <p id="codigoPer-ver"></p>
+                            </div>
+                            <div class="col-md-9">
+                              <label>Apellidos y Nombres</label>
+                              <p id="nombrePer-ver"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Teléfono</label>
+                                <p id="telefonoPer-ver"></p>
+                            </div>
+                            <div class="col-md-9">
+                                <label>Correo</label>
+                                <p id="correoPer-ver"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <label>Cargo</label>
+                                <p id="cargoPer-ver"></p>
+                            </div>
+                            <div class="col-md-5">
+                                <label>Fecha Inicio</label>
+                                <p id="fecha-iniPer-ver"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <label>Costo</label>
+                                <p id="costoPer-ver"></p>
+                            </div>
+                            <!--div class="col-md-4">
+                                <label>Esp - Prov</label>
+                                <p id="esp-provPer-ver"></p>
+                            </div-->
+                            <div class="col-md-5">
+                                <label>Fecha Fin</label>
+                                <p id="fecha-finPer-ver"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="jefeProy-ver" disabled>
+                                <label class="form-check-label">
+                                    Jefe de Proyecto
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input checked class="form-check-input" type="checkbox" value="" id="vigentePer-ver" disabled>
+                                <label class="form-check-label" for="vigentePer">
+                                    Vigente
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Boton desplazamiento hacai arriba -->
+        <boton type="button"><i id="scroll-hacia-arriba" class="scroll-hacia-arriba fas fa-angle-up rounded" ></i></boton>
+
+        <!-- Menu Contextual Tabla Personal del Consorcio -->
+        <div id="menuContextualConsorcio" class="dropdown-menu">
+            <boton id="botonVerConsor" class ="dropdown-item" type="button" data-toggle="modal" data-target="#ver-personal-consorcio">Ver</boton>
+            <boton id="botonAgregarConsorcio" class ="dropdown-item" type="button" data-toggle="modal" data-target="#agregar-personal-consorcio">Nuevo</boton>
+            <boton id="botonModificarConsorcio" class ="dropdown-item" type="button" data-toggle="modal" data-target="#agregar-personal-consorcio">Editar</boton>
+            <boton id="botonEliminarConsorcio" class="dropdown-item" type="button" data-toggle="modal" data-target="#modal-eliminar">Eliminar</boton>
+        </div>
+
+        <!-- Menu Contextual Tabla Especialistas del Cliente -->
+        <div id="menuContextualCliente" class="dropdown-menu">
+            <boton id="botonVerCliente" class ="dropdown-item" type="button" data-toggle="modal" data-target="#ver-especialistas-cliente">Ver</boton>
+            <boton id="botonAgregarCliente" class ="dropdown-item" type="button" data-toggle="modal" data-target="#agregar-especialistas-cliente">Nuevo</boton>
+            <boton id="botonModificarCliente" class ="dropdown-item" type="button" data-toggle="modal" data-target="#agregar-especialistas-cliente">Editar</boton>
+            <boton id="botonEliminarCliente" class="dropdown-item" type="button" data-toggle="modal" data-target="#modal-eliminar">Eliminar</boton>
+        </div>
+        
+        <script src="../../static/posts/jquery.js"></script>
+        <script src="../../static/posts/bootstrap.bundle.min.js"></script>
+        <script src="../../static/posts/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+        <script src="../../static/posts/script.js"></script>
+    </body>
+</html>

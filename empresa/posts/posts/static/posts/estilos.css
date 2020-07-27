@@ -1,0 +1,66 @@
+.scroll-hacia-arriba {
+    position: fixed; /*Mantiene fijo la posicion en la pagina*/
+    display: none; /* Elimina el elementoHtml de la pagina
+    
+    /*Posiciona el elemento si esta fijado en la pagina*/
+    right: 1rem; /*1 rem = 16px*/
+    bottom: 1rem;
+    
+    /*Ancho y altura del elemento*/
+    width: 46px;
+    height: 46px;
+
+    text-align: center;
+    color: white;
+    background: rgba(90, 92, 105, 0.5);
+    line-height: 46px !important; /*Separacion entre lineas de un bloque*/ 
+}
+
+/*Cuando pasas el mouse cambia de color de fondo*/
+.scroll-hacia-arriba:hover{
+    background: #5a5c69;
+}
+
+/*Cambio de colores cuando das cick en las pestañas de bootstrap
+.nav-tabs .nav-link.active{
+    color: #007bff !important;
+    background-color: #f8f9fa !important;
+}*/
+
+/*Cambio de color en las pestañas de bootstrap
+.nav-link{
+    color: black !important;
+}
+*/
+/*Establece lo maximo q puede crecer una celda y pone tres puntos suspensivos si se pasa*/
+td{
+    max-width: 210px;
+    /*min-width: 50px;*/
+    white-space: nowrap; /*Pone al texto en una sola linea*/
+    overflow: hidden; /*Al pasarse el texto de su contenedor(celda), esta propiedad oculta eso q se pasó*/
+    text-overflow: ellipsis; /*Al ocultar el texto, esta propiedad agrega 3 puntos suspensivos*/
+    /*text-align: center !important;*/
+}
+
+/*Hace que las cabeceras de las tablas esten obligatoriamente en una sola linea*/
+th{
+    white-space: nowrap;
+}
+
+/*Reduce el tamaño de la ventana modal del formulario "Especialistas del cliente"*/
+.tamaño{
+    max-height: 600px;
+}
+.card-body{
+    padding-bottom: 8px !important ;
+}
+
+#ver-personal-consorcio label{
+    font-weight: bold;
+    color: black !important;
+}
+
+#ver-especialistas-cliente label{
+    font-weight: bold;
+    color: black !important;
+}
