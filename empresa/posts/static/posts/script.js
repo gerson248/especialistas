@@ -12,7 +12,7 @@ var TablaPersoConsorcio = function (){
     //Aplicando la herramienta DataTables a la tabla Personal del Consorcio
     $('#TablaPersoConsorcio').DataTable({  
         "language": lenguaje_español,
-        "columnDefs":[{"orderable" :false,"targets": [4,5,8,10,11]}], //Elimina las flechas de ordenar en las columnas en los [].
+        "columnDefs":[{"orderable" :false,"targets": [8,10]}], //Elimina las flechas de ordenar en las columnas en los []. 
         "lengthMenu": [3,5,10,15], //Establece los valores del select del numero de filas que se quiere mostrar.
         "info": false, //Elimina la informacion de paginas mostradas de la parte inferior de la tabla.
     });
@@ -22,7 +22,7 @@ var TablaCliente = function (){
     //Aplicando la herramienta DataTables a la tabla Especialistas del cliente
     $('#TablaCliente').DataTable({ 
         "language":lenguaje_español,
-        "columnDefs":[{"orderable" :false, "targets": [4,5,8,9,10]}], //Elimina las flechas de ordenar en las columnas en los [].
+        "columnDefs":[{"orderable" :false, "targets": [8,9]}], //Elimina las flechas de ordenar en las columnas en los [].
         "lengthMenu": [3,5,10,15], //Establece los valores del select del numero de filas que se quiere mostrar
         "info": false, //Elimina la informacion de paginas mostradas de la parte inferior de la tabla.
     });
@@ -74,6 +74,7 @@ var aparicionBotonScroll = function (){
     else
         $("#scroll-hacia-arriba").fadeOut(); 
 }
+
 
 //Funcion que hace mostrar u ocultar el boton de scroll dependiendo de la altura de la pagina en el que el usuario se encuentra.
 $(window).on("scroll",function(){
@@ -147,7 +148,8 @@ $("#espacioMCConsorcio").on("contextmenu",function(e){
     $("#botonAgregarConsorcio").on("click",function (){
         $("#forma-personal-consorcio").trigger("reset"); // Reinicia el formulario
         $("#tituloModalConsor").text("Nuevo Personal del Consorcio"); // Cambia de nombre al formulario
-    }) 
+    })
+    
 
     $("#botonModificarConsorcio").on("click",function (){
         dato = e.target; // Captura el elemento donde se realizo el evento
@@ -179,9 +181,17 @@ $("#espacioMCConsorcio").on("contextmenu",function(e){
         $("#tituloModalConsor").text("Editar Personal del Consorcio"); //Cambia de nombre al formulario
     })
 
-    $("#botonEliminarConsorcio").on("click",function (){
+    $("#modal-eliminar-aceptar").on("click",function (){
         dato = e.target;
+        fila = $(dato).closest("tr");
+        id = parseInt(fila.find("td").eq(0).text());
         $("#TablaPersoConsorcio").DataTable().row(dato).remove().draw();
+        $("#modal-eliminar").modal("hide");
+        /*var respuesta = confirm("¿Estás seguro de borrar el registro "+id+"?");
+        console.log(respuesta)
+        if (respuesta){
+            $("#TablaPersoConsorcio").DataTable().row(dato).remove().draw();
+        }*/
     })
     //return false; // Descativa cualquier menu contextual activado, considerando el de windows (NO SE ESTA USANDO)
 });
@@ -206,9 +216,9 @@ $("#espacioMCCliente").on("contextmenu",function(e){
         correo = fila.find("td").eq(5).text();
         fIni = fila.find("td").eq(6).text();
         fFin = fila.find("td").eq(7).text();
-        tipo = fila.find("td").eq(8).text();
-        comentario = fila.find("td").eq(9).text();
-        vigente = fila.find("td").eq(10).children("input").eq(0).prop("checked");
+        //tipo = fila.find("td").eq(8).text();
+        comentario = fila.find("td").eq(8).text();
+        vigente = fila.find("td").eq(9).children("input").eq(0).prop("checked");
         // Ingresa los datos de la fila al formulario 
         $("#codigoClie-ver").text(codigo);   
         $("#nombreClie-ver").text(nombre);
@@ -217,7 +227,7 @@ $("#espacioMCCliente").on("contextmenu",function(e){
         $("#correoClie-ver").text(correo);
         $("#fecha-ini_Clie-ver").text(fIni);
         $("#fecha-fin_Clie-ver").text(fFin);
-        $("#adm-prov_Clie-ver").text(tipo);
+        //$("#adm-prov_Clie-ver").text(tipo);
         $("#comentarioClie-ver").text(comentario);
         $("#vigenteClie-ver").prop("checked",vigente);
     })
@@ -237,9 +247,9 @@ $("#espacioMCCliente").on("contextmenu",function(e){
         correo = fila.find("td").eq(5).text();
         fIni = fila.find("td").eq(6).text();
         fFin = fila.find("td").eq(7).text();
-        tipo = fila.find("td").eq(8).text();
-        comentario = fila.find("td").eq(9).text();
-        vigente = fila.find("td").eq(10).children("input").eq(0).prop("checked");
+        //tipo = fila.find("td").eq(8).text();
+        comentario = fila.find("td").eq(8).text();
+        vigente = fila.find("td").eq(9).children("input").eq(0).prop("checked");
         // Ingresa los datos de la fila al formulario 
         $("#codigoClie").val(codigo);   
         $("#nombreClie").val(nombre);
@@ -248,15 +258,24 @@ $("#espacioMCCliente").on("contextmenu",function(e){
         $("#correoClie").val(correo);
         $("#fecha-ini_Clie").val(fIni);
         $("#fecha-fin_Clie").val(fFin);
-        $("#adm-prov_Clie").val(tipo);
+        //$("#adm-prov_Clie").val(tipo);
         $("#comentarioClie").val(comentario);
         $("#vigenteClie").prop("checked",vigente);
         $("#tituloModalCliente").text("Editar Especialista del Cliente");
     })
 
-    $("#botonEliminarCliente").on("click",function (){
+    $("#modal-eliminar-aceptar").on("click",function (){
         dato = e.target;
+        fila = $(dato).closest("tr");
+        id = parseInt(fila.find("td").eq(0).text());
         $("#TablaCliente").DataTable().row(dato).remove().draw();
+        $("#modal-eliminar").modal("hide");
+        /*$("#modal-eliminar").modal("hide");
+        var respuesta = confirm("¿Estás seguro de borrar el registro "+id+"?");
+        if (respuesta){
+            $("#TablaCliente").DataTable().row(dato).remove().draw();
+        }*/
+        
     })
 })  
 

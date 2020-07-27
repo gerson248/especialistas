@@ -10,7 +10,7 @@ class Persona(models.Model):
     fecha_nacimiento = models.DateField('Fecha de Nacimiento')
     fecha_inicio = models.DateField('Fecha de Inicio')
     fecha_fin = models.DateField('Fecha de Fin',null=True)
-    vigente = models.BooleanField('Vigente')
+    vigente = models.BooleanField('Vigente',default=False,blank=True)
     telefono = models.CharField('Número de celular', max_length=30)
     class Meta:
         abstract = True
@@ -31,7 +31,7 @@ class Proyecto(models.Model):
     situacion = models.CharField('Situación',max_length=100)
     fecha_estado = models.DateField('Fecha de Estado')
     fecha_registro = models.DateField('Fecha de Registro')
-    activo = models.BooleanField('Activo')
+    activo = models.BooleanField('Activo',default=False,blank=True)
     def __str__(self):
         return self.denominacion_corta
 
@@ -49,7 +49,7 @@ class Consorcio(models.Model):
         return self.nombre
 
 class Personal_Consorcio(Persona):
-    jefe = models.BooleanField('Jefe')
+    jefe = models.BooleanField('Jefe',default=False,blank=True)
     costo = models.FloatField('Costo',default=0)
     consorcio_id = models.ForeignKey(Consorcio, on_delete=models.CASCADE)
     def __str__(self):
